@@ -5,21 +5,34 @@ public class SiakadFor19 {
         Scanner sc = new Scanner(System.in);
 
         double nilai, tertinggi = 0, terendah = 100;
+        int lulus = 0, tidakLulus = 0;
 
         for (int i = 1; i <= 10; i++) {
             System.out.println("Masukkan nilai mahasiswa ke-" + i + ": ");
             nilai = sc.nextDouble();
-            if (nilai > tertinggi) {
+            if (nilai >60){
+                lulus++;
+                if (nilai > tertinggi) {
                 tertinggi = nilai;
+                }
+                if (nilai < terendah) {
+                terendah = nilai;   
+                } 
             }
-            if (nilai < terendah) {
-                terendah = nilai;
-                
-            } 
+            else{
+                tidakLulus++;
+                if (nilai > tertinggi) {
+                tertinggi = nilai;
+                }
+                if (nilai < terendah) {
+                terendah = nilai;   
+                } 
+            }
         }
         System.out.println("Nilai tertinggi: " + tertinggi);  
-        System.out.println("Nilai terendah: " + terendah);   
+        System.out.println("Nilai terendah: " + terendah);
+        System.out.println("Jumlah mahasiswa lulus: " + lulus);   
+        System.out.println("Jumlah mahasiswa tidak lulus: " + tidakLulus);
         
-        sc.close();
     }
 }
